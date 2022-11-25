@@ -10,22 +10,24 @@ import { ApiService } from '../services/api.service';
 export class ViewlistComponent implements OnInit {
 
   userId:any;
-  userdetails:any
+  userdetails:any;
  
   constructor(private activatedRoute:ActivatedRoute,private apiservice:ApiService) { }
 
   ngOnInit(): void {
-this.activatedRoute.params.subscribe(result=>{
- // console.log(result['id'])
- this.userId = result['id']
-})
+ this.activatedRoute.params.subscribe((result:any)=>{
+  console.log(result.id)
+  this.userId = result['id']
+
+ })
+
+
 this.apiservice.viewuser(this.userId)
 .subscribe((result)=>{
-console.log(result);
-this.userdetails = result
-
-})
-
+    console.log(result);
+  this.userdetails=result
+  
+ })
 
   }
 

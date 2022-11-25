@@ -18,10 +18,10 @@ export class ApiService {
   getUsersList(){
     // use http request get-make api call to http://localhost:3000/users
     //get() - HttpClient class - HttpClientModule library
- return this.api.get('http://localhost:3000/users')
+ return this.api.get('https://dummyjson.com/users')
   }
   viewuser(userId:any){
-    return this.api.get('http://localhost:3000/users/'+userId)
+    return this.api.get('https://dummyjson.com/users/'+userId)
   }
   
 }
